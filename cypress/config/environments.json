@@ -1,0 +1,10 @@
+{
+    "local": {
+        "backendUrl": "http://localhost:3000",
+        "frontendUrl": "http://localhost:8081"
+    },
+    "internet": {
+        "backendUrl": "https://burger-store-backend.example.fr",
+        "frontendUrl": "https://burger-store-frontend.example.fr"
+    }
+}

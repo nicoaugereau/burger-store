@@ -1,0 +1,41 @@
+{
+    "name": "make-burger",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "backend": "json-server --watch db/db.json",
+        "cypress:open": "npx cypress open",
+        "cypress:run": "npx cypress run"
+    },
+    "dependencies": {
+        "core-js": "^3.6.5",
+        "cypress": "^9.1.1",
+        "cypress-cucumber-preprocessor": "^4.3.0",
+        "cypress-multi-reporters": "^1.5.0",
+        "cypress-visual-regression": "file:cypress-visual-regression.tar",
+        "json-server": "^0.17.0",
+        "mocha-junit-reporter": "^2.0.2",
+        "mochawesome": "^7.0.1",
+        "moment": "^2.29.1",
+        "shelljs": "^0.8.4",
+        "vue": "^3.0.0",
+        "vue-router": "^4.0.0-0"
+    },
+    "devDependencies": {
+        "@vue/cli-plugin-babel": "~4.5.0",
+        "@vue/cli-plugin-router": "~4.5.0",
+        "@vue/cli-service": "~4.5.0",
+        "@vue/compiler-sfc": "^3.0.0"
+    },
+    "cypress-cucumber-preprocessor": {
+        "nonGlobalStepDefinitions": false,
+        "cucumberJson": {
+            "generate": true,
+            "outputFolder": "reports/cucumber",
+            "filePrefix": "",
+            "fileSuffix": ".cucumber"
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "burgers": [
+        {
+            "nome": "Barrack Obama",
+            "pao": "Complet",
+            "carne": "Veggie burger",
+            "opcionais": ["Bacon", "Cheddar"],
+            "status": "En préparation",
+            "id": 1
+        },
+        {
+            "nome": "John Doe",
+            "pao": "Italiano Branco",
+            "carne": "Boeuf",
+            "opcionais": ["Bacon"],
+            "status": "En attente",
+            "id": 2
+        },
+        {
+            "nome": "Monica Bellucci",
+            "pao": "Italiano Branco",
+            "carne": "Porc",
+            "opcionais": ["Bacon", "Cheddar"],
+            "status": "En attente",
+            "id": 3
+        }
+    ]
+}

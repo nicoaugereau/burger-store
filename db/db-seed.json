@@ -1,0 +1,106 @@
+{
+    "ingredientes": {
+        "paes": [
+            {
+                "id": 1,
+                "tipo": "Italiano Branco"
+            },
+            {
+                "id": 2,
+                "tipo": "3 Fromages"
+            },
+            {
+                "id": 3,
+                "tipo": "Parmesan et Origan"
+            },
+            {
+                "id": 4,
+                "tipo": "Complet"
+            }
+        ],
+        "carnes": [
+            {
+                "id": 1,
+                "tipo": "Boeuf"
+            },
+            {
+                "id": 2,
+                "tipo": "Poulet"
+            },
+            {
+                "id": 3,
+                "tipo": "Porc"
+            },
+            {
+                "id": 4,
+                "tipo": "Veggie burger"
+            }
+        ],
+        "opcionais": [
+            {
+                "id": 1,
+                "tipo": "Bacon"
+            },
+            {
+                "id": 2,
+                "tipo": "Cheddar"
+            },
+            {
+                "id": 3,
+                "tipo": "Salami"
+            },
+            {
+                "id": 4,
+                "tipo": "Tomate"
+            },
+            {
+                "id": 5,
+                "tipo": "Oignon rouge"
+            },
+            {
+                "id": 6,
+                "tipo": "Concombre"
+            }
+        ]
+    },
+    "status": [
+        {
+            "id": 1,
+            "tipo": "En attente"
+        },
+        {
+            "id": 2,
+            "tipo": "En préparation"
+        },
+        {
+            "id": 3,
+            "tipo": "Terminée"
+        }
+    ],
+    "burgers": [
+        {
+            "nome": "Juliana Silva",
+            "pao": "Complet",
+            "carne": "Veggie burger",
+            "opcionais": ["Bacon", "Cheddar"],
+            "status": "En préparation",
+            "id": 1
+        },
+        {
+            "nome": "John Doe",
+            "pao": "Italiano Branco",
+            "carne": "Boeuf",
+            "opcionais": ["Bacon"],
+            "status": "En attente",
+            "id": 2
+        },
+        {
+            "nome": "Cecília Moura",
+            "pao": "Italiano Branco",
+            "carne": "Porc",
+            "opcionais": ["Bacon", "Cheddar"],
+            "status": "En attente",
+            "id": 3
+        }
+    ]
+}
