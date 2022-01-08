@@ -3,6 +3,7 @@ node_modules
 /dist
 /cypress/screenshots
 /cypress/videos
+reports/*
 
 # local env files
 .env.local
