@@ -1,0 +1,16 @@
+# https://opentestfactory.gitlab.io/orchestrator/quickstart/
+# https://opentestfactory.gitlab.io/site/specification/index.html
+metadata:
+  name: Cypress Burger-Store workflow
+jobs:
+  # Set the job key.  The key is displayed as the job name when
+  # a job name is not provided
+  keyword-driven:
+    runs-on: cypress # can be [ssh, linux, cypress]
+    steps:
+    - run: |
+        npm ci
+        npm start
+    - uses: actions/checkout@v2
+      with:
+        repository: https://github.com/nicoaugereau/burger-store.git
