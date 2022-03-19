@@ -16,5 +16,4 @@ jobs:
         repository: https://github.com/nicoaugereau/burger-store.git
     - run: |
         npm ci
-        npm start
       working-directory: burger-store
