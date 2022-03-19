@@ -13,4 +13,4 @@ jobs:
         npm start
     - uses: actions/checkout@v2
       with:
-        repository: https://github.com/nicoaugereau/burger-store.git
+        repository: https://github.com/nicoaugereau/burger-store.g
