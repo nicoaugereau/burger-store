@@ -1,10 +1,13 @@
 /// <reference types="cypress" />
 
+import { clic } from '../../../support/bs/common'
+import { creerBurger } from '../../../support/bs/home'
 import { getVar } from '../../../support/commands'
+
+const customer = 'Nicolas'
 
 describe('Mock et erreurs réseau', () => {
     const environment = 'local'
-    const errorMsg = 'Oops! Notre site est momentanément indisponible. Revenez un peu plus tard.'
 
     it('Le site est en ligne', () => {
         cy.environnement(environment).then(url => {
@@ -38,21 +41,34 @@ describe('Mock et erreurs réseau', () => {
     })
 
     it('Simuler une erreur serveur', () => {
-        cy.intercept('GET', '**/ingredientes', { statusCode: 500 }).as('getServerFailure')
+        cy.intercept('POST', '**/burgers', { statusCode: 500 }).as('getServerFailure')
 
         cy.visit(getVar.url)
+
+        creerBurger({ client: customer })
+        creerBurger({ pain: '3 Fromages' })
+        creerBurger({ viande: 'Boeuf' })
+        clic('Créer mon Burger!')
 
         cy.wait('@getServerFailure')
         //cy.get('[data-testid="orders-table"] div p').should('contain', errorMsg)
+        cy.get('@getServerFailure').then(res=>{
+            expect(res.response.statusCode).eq(500)
+        })
     })
 
     it('Simuler une erreur réseau', () => {
-        cy.intercept('GET', '**/ingredientes', { forceNetworkError: true }).as('getNetworkFailure')
+        cy.intercept('POST', '**/burgers', { forceNetworkError: true }).as('getNetworkFailure')
 
         cy.visit(getVar.url)
+        creerBurger({ client: customer })
+        creerBurger({ pain: '3 Fromages' })
+        creerBurger({ viande: 'Boeuf' })
+        clic('Créer mon Burger!')
 
-        cy.wait('@getNetworkFailure')
-        //cy.get('[data-testid="orders-table"] div p').should('contain', errorMsg)
+        cy.wait('@getNetworkFailure').then(res=>{
+            expect(res.error.name).eq('Error')
+        })
     })
 
     it('Mock des données sur la Gestion des commandes', () => {

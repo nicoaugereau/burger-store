@@ -22,7 +22,7 @@ class types {
 }
 class clics extends types {
     set bouton(label) {
-        cy.contains(label).click()
+        cy.contains(label, { timeout: msTimeout }).click()
     }
 }
 class titres extends types {

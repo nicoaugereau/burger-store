@@ -3,7 +3,7 @@ Feature: Créer plusieurs commandes
     Scenario Outline: Exemple pour plusieurs clients
         Given je teste sur l'environnement local
         And je visite le site "Burger Store"
-        Given je suis sur la page "Créez votre propre Burger"
+        Given je suis sur la page "Créez votre Burger"
         When je saisis le nom "<Client>"
         And je choisis le pain "<Pain>"
         And je choisis la viande "<Viande>"

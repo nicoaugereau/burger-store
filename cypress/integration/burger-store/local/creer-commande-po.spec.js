@@ -18,7 +18,7 @@ describe(`Créer un burger et contrôler l'état de la commande`, () => {
     })
 
     it(`Créer mon burger`, () => {
-        titre.texte = 'Créez votre propre Burger'
+        titre.texte = 'Créez votre Burger'
         creerBurger.client = customer
         creerBurger.pain = '3 Fromages'
         creerBurger.viande = 'Boeuf'
@@ -28,10 +28,14 @@ describe(`Créer un burger et contrôler l'état de la commande`, () => {
     })
 
     it(`Contrôler l'état de la commande`, () => {
-        titre.texte = 'Créez votre propre Burger'
+        titre.texte = 'Créez votre Burger'
         clic.bouton = 'Commandes'
         titre.texte = 'Gestion des commandes'
         commande.nom = customer
         commande.status = 'En attente'
+    })
+
+    it.only(`automati<ue`, () => {
+        creerBurger.automatique()
     })
 })

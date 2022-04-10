@@ -5,7 +5,7 @@ Feature: Créer un burger et contrôler l'état de la commande
         And je visite le site "Burger Store"
 
     Scenario: Créer mon burger
-        Given je suis sur la page "Créez votre propre Burger"
+        Given je suis sur la page "Créez votre Burger"
         When je saisis le nom "Nicolas"
         And je choisis le pain "3 Fromages"
         And je choisis la viande "Boeuf"
@@ -14,7 +14,7 @@ Feature: Créer un burger et contrôler l'état de la commande
         And je clique sur "Créer mon Burger!"
 
     Scenario: Contrôler l'état de la commande
-        Given je suis sur la page "Créez votre propre Burger"
+        Given je suis sur la page "Créez votre Burger"
         When je clique sur "Commandes"
         Then l'application redirige vers la page "Gestion des commandes"
         And une commande au nom de "Nicolas" est présente
@@ -22,7 +22,7 @@ Feature: Créer un burger et contrôler l'état de la commande
 
     @focus 
     Scenario: Création automatique d'une commande
-        Given je suis sur la page "Créez votre propre Burger"
+        Given je suis sur la page "Créez votre Burger"
         When je saisis les informations de commande
         And je clique sur "Commandes"
         Then la commande est au statut En attente

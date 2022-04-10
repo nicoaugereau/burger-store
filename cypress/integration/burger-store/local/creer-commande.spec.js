@@ -16,7 +16,7 @@ describe(`Créer un burger et contrôler l'état de la commande`, () => {
     })
 
     it(`Créer mon burger`, () => {
-        cy.get('[data-testid="page-title"]', { timeout: msTimeout }).scrollIntoView().should('have.text', 'Créez votre propre Burger')
+        cy.get('[data-testid="page-title"]', { timeout: msTimeout }).scrollIntoView().should('have.text', 'Créez votre Burger')
         cy.get('[data-testid="username"]').scrollIntoView().type(customer)
         cy.get('[data-testid="pao"]').select('3 Fromages')
         cy.get('[data-testid="carne"]').select('Boeuf')
@@ -34,7 +34,7 @@ describe(`Créer un burger et contrôler l'état de la commande`, () => {
     })
 
     it(`Contrôler l'état de la commande`, () => {
-        cy.get('[data-testid="page-title"]', { timeout: msTimeout }).scrollIntoView().should('have.text', 'Créez votre propre Burger')
+        cy.get('[data-testid="page-title"]', { timeout: msTimeout }).scrollIntoView().should('have.text', 'Créez votre Burger')
         cy.contains('Commandes').click()
         cy.get('[data-testid="page-title"]').scrollIntoView().should('have.text', 'Gestion des commandes')
         cy.contains(customer).then($el => {
@@ -43,7 +43,7 @@ describe(`Créer un burger et contrôler l'état de la commande`, () => {
     })
 
     it(`Création automatique d'une commande`, () => {
-        cy.get('[data-testid="page-title"]', { timeout: msTimeout }).scrollIntoView().should('have.text', 'Créez votre propre Burger')
+        cy.get('[data-testid="page-title"]', { timeout: msTimeout }).scrollIntoView().should('have.text', 'Créez votre Burger')
         cy.fixture('example').then(user => {
             cy.get('[data-testid="username"]').scrollIntoView().type(user.burgers[0].nome)
             cy.get('[data-testid="pao"]').select(user.burgers[0].pao)

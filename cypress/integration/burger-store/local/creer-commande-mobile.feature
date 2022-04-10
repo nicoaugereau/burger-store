@@ -6,7 +6,7 @@ Feature: Tester le site en version mobile
 
     Scenario: Créer mon burger        
         Given je visite le site "Burger Store"
-        Given je suis sur la page "Créez votre propre Burger"
+        Given je suis sur la page "Créez votre Burger"
         When je saisis le nom "Nicolas"
         And je choisis le pain "3 Fromages"
         And je choisis la viande "Boeuf"

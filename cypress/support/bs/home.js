@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 
 import { clic } from './common'
+let msTimeout = Cypress.config('requestTimeout')
 /**
  * Gestion de la création d'un burger
  * @param {*} options { client: 'name' }
@@ -8,7 +9,7 @@ import { clic } from './common'
 export const creerBurger = options => {
     if (options.client) {
         cy.setVar('orderName', options.client)
-        cy.get('[data-testid="username"]').scrollIntoView().type(options.client)
+        cy.get('[data-testid="username"]', { timeout: msTimeout }).scrollIntoView().type(options.client)
     }
     if (options.pain) cy.get('[data-testid="pao"]').select(options.pain)
     if (options.viande) cy.get('[data-testid="carne"]').select(options.viande)

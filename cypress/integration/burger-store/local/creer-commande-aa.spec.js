@@ -18,7 +18,7 @@ describe(`Créer un burger et contrôler l'état de la commande`, () => {
     })
 
     it(`Créer mon burger`, () => {
-        titre('Créez votre propre Burger')
+        titre('Créez votre Burger')
         creerBurger({ client: customer })
         creerBurger({ pain: '3 Fromages' })
         creerBurger({ viande: 'Boeuf' })
@@ -28,7 +28,7 @@ describe(`Créer un burger et contrôler l'état de la commande`, () => {
     })
 
     it(`Contrôler l'état de la commande`, () => {
-        titre('Créez votre propre Burger')
+        titre('Créez votre Burger')
         clic('Commandes')
         titre('Gestion des commandes')
         commandes({ client: customer })

@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 
+const { clic } = require("./common")
 let msTimeout = Cypress.config('requestTimeout')
 
 /**
@@ -33,7 +34,7 @@ class creerBurgers {
                 this.option = user.burgers[0].opcionais[element]
             }
         })
-        clic('Créer mon Burger!')
+        clic.bouton = 'Créer mon Burger!'
     }
 }
 
