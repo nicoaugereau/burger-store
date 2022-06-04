@@ -1,50 +1,59 @@
-# Burger Store🍔
+# Burger Store 🍔
 
-Este projeto trata-se de um sistema de pedidos para uma hambuergueria, possuindo uma página para realização do pedido e uma página para conferir os pedidos feitos.
+This project is an order system for a hamburger restaurant, with an order page and a page to check the orders placed.
 
-## Caso você queira analisar o projeto em sua maquina, siga esses passo a passo 😁
+📣 This project has been updated to Cypress v10. The feature test files do not work due to the [cypress-cucumber-preprocessor](https://github.com/badeball/cypress-cucumber-preprocessor) plugin which is not yet compatible.
+
+## Starting this project on your machine
 
 <br>
 
-### Clone o repositório😎
+### Clone the repository
 
 ```
 git clone https://github.com/jovimoura/burger-store
 ```
 
-### Acesse o diretorio🤓
+### Go to the directory
 
 ```
 cd <nome-da-pasta>
 ```
-### Instale as dependências🤠
+
+### Install the dependencies
+
 ```
 npm install
 ```
-### Inicie a aplicação🤩
+
+### Start the application
+
 ```
-npm run serve
+npm run start
 ```
 
-### Inicie o backend 😉
+This start the backend and frontend.
+
+### Start the backend
 
 ```
 npm run backend
 ```
-### O site fica na porta:🤗
+
+### The site is at the door
 
 ```
-http://localhost:8080/
+http://localhost:8081/
 ```
 
-## Como foi feito?🤔
+## How was it done?
 
-<p>Para realização do projeto, foram utilizados o Vue-Router, Json-serve, para rodar um mini banco de dados, CSS para estilização e JavaScript para métodos e funções do projeto!</p>
+<p>To realize the project, we used Vue-Router, Json-serve, to run a mini database, CSS for styling and JavaScript for project methods and functions!</p>
 <p>
-O projeto possui duas páginas, sendo a primeira página, a home e a segunda, a página de pedidos. Na primeira página temos um formulário que você irá utilizar para montar seu hamburguer e para enviar o pedido ao "banco" e na parte de pedidos, possuimos uma tabela que consome os dados desse banco e na mesma tabela possuímos funções para edição e remoção de pedidos.
+The project has two pages, the first page is the home page and the second page is the order page. In the first page we have a form that you will use to assemble your burger and to send the order to the "bank" and in the order part, we have a table that consumes the data from this bank and in the same table we have functions for editing and removing orders.
 </p>
 
-## Imagens do projeto 💻
+## Project Images
 
 <img src='./src/assets/img-readme/foto1.png'>
 
@@ -52,7 +61,7 @@ O projeto possui duas páginas, sendo a primeira página, a home e a segunda, a 
 
 <img src='./src/assets/img-readme/foto3.png'>
 
-## Tecnologias utilizadas🦉
+## Technologies used
 
 <ul>
     <li>VueJS 3</li>
@@ -63,8 +72,14 @@ O projeto possui duas páginas, sendo a primeira página, a home e a segunda, a 
     <li>CSS</li>
 </ul>
 
-## Autor😃
+## Author
 
 ### João Victor dos Santos Moura
+
 ### E-mail: joaovictors.mouraa@gmail.com
-### Linkedin: https://www.linkedin.com/in/jovimoura10/
+
+### LinkedIn: https://www.linkedin.com/in/jovimoura10/
+
+### Modifying by Nicolas Augereau for Demo with Cypress
+
+### LinkedIn: https://www.linkedin.com/in/nicolasaugereau/
