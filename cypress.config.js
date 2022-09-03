@@ -64,6 +64,7 @@ module.exports = defineConfig({
     chromeWebSecurity: false,
     e2e: {
         specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx,feature,features}',
+        experimentalStudio: true,
         setupNodeEvents(on, config) {
             // bind to the event we care about
 
