@@ -90,15 +90,6 @@ beforeEach(abortEarly)
 afterEach(abortEarly)
 
 before(() => {
-    Cypress.Cookies.debug(true)
-    // Preserve cookies in every test
-    //Cypress.Cookies.defaults({preserve:  ['shouldSkip', 'heuresMinutes']})
-    Cypress.Cookies.defaults({
-        preserve: cookie => {
-            console.log(cookie)
-            return true
-        }
-    })
     cy.task('resetShouldSkipFlag')
     //Clear downloads folder
     cy.task('clearFolder', 'cypress/downloads')
