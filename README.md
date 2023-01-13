@@ -37,7 +37,7 @@ npm install
 UNIX / macOS
 
 ```
-npm run start
+npm start
 ```
 
 Windows
