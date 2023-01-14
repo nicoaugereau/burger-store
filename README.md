@@ -34,13 +34,20 @@ npm install
 
 ### Start the application (frontend and backend)
 
-UNIX / macOS
+#### UNIX / macOS
 
 ```
 npm start
 ```
 
-Windows
+or
+
+```
+npm run serve
+npm run backend
+```
+
+#### Windows
 
 ```
 npm run start:win
