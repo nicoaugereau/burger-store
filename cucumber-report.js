@@ -98,7 +98,7 @@ module.exports = function addScreenshots(cibuildid, cibuildidLink) {
 
                 screenshots.forEach(screenshot => {
                     if (screenshot.includes(feature)) {
-                        if (cibuildid != null) {
+                        if (cibuildid != undefined && cibuildid != 'undefined') {
                             if (!myStep.embeddings) {
                                 myStep.embeddings = []
                                 screenshot = screenshot.replace(/\\/g, '/')

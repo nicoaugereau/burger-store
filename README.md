@@ -1,8 +1,14 @@
+![NodeJS version](https://img.shields.io/badge/node-16.x-green.svg)
+![NodeJS version](https://img.shields.io/badge/node-18.x-green.svg)
+![NodeJS version](https://img.shields.io/badge/cypress-12.x-green.svg)
+
 # Burger Store 🍔
 
 This project is an order system for a hamburger restaurant, with an order page and a page to check the orders placed.
 
-📣 This project has been updated to Cypress v10.
+📣 This project has been updated to Cypress v12 (with cypress-cucumber-preprocessor v4.3.1).
+
+<br>
 
 ## Starting this project on your machine
 
@@ -26,24 +32,33 @@ cd <nome-da-pasta>
 npm install
 ```
 
-### Start the application
+### Start the application (frontend and backend)
+
+#### UNIX / macOS
 
 ```
-npm run start
+npm start
+```
+
+or
+
+```
+npm run serve
+npm run backend
+```
+
+#### Windows
+
+```
+npm run start:win
 ```
 
 This start the backend and frontend.
 
-### Start the backend
-
-```
-npm run backend
-```
-
 ### The site is at the door
 
 ```
-http://localhost:8081/
+http://localhost:8080/
 ```
 
 ## How was it done?
