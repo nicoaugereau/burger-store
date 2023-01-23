@@ -97,4 +97,4 @@ The project has two pages, the first page is the home page and the second page i
 
 ### Modifying by Nicolas Augereau for Demo with Cypress
 
-### LinkedIn: https://www.linkedin.com/in/nicolasaugereau/
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nicolasaugereau/)
