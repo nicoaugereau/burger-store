@@ -17,7 +17,7 @@
         "@cypress/browserify-preprocessor": "^3.0.2",
         "core-js": "^3.6.5",
         "cucumber-reporter": "file:cucumber-reporter.tar",
-        "cypress": "^12.3.0",
+        "cypress": "^12.4.1",
         "cypress-cucumber-preprocessor": "^4.3.1",
         "cypress-multi-reporters": "^1.6.2",
         "json-server": "^0.17.0",
