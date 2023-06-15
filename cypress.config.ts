@@ -28,6 +28,7 @@ export default defineConfig({
     // the e2e or component configuration
     e2e: {
         specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx,feature,features}',
+        testIsolation: false,
         experimentalStudio: true,
         experimentalWebKitSupport: true,
         setupNodeEvents(on, config) {
