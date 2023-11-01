@@ -4,7 +4,7 @@
  * Command : node ./cypress_runner.js <env> <browser> <device> <orientation> <spec>
  *
  * Pour les tests cucumber, préférer l'utilisation suivante (exemple exécution tests non Electron) :
- * npx cypress-tags run -e TAGS='not @isNotElectron' -e configFile=r2
+ * npx cypress-tags run -e TAGS='not @isNotElectron' -e configFile=local
  *
  * https://medium.com/cypress-io-thailand/generate-a-beautiful-test-report-from-running-tests-on-cypress-io-371c00d7865a
  */
@@ -22,27 +22,37 @@ const argv = yargs
     .options({
         app: {
             alias: 'a',
-            describe: 'Application à tester',
+            describe: 'Application to test (default burger-store)',
             default: 'burger-store',
             choices: ['burger-store', 'cypress']
         },
         env: {
             alias: 'e',
-            describe: 'Environnement sur lequel exécuter les tests (**=tous)',
+            describe: 'Environment (default local)',
             default: 'local',
             choices: ['local', 'internet']
         },
         browser: {
             alias: 'b',
-            describe: 'Navigateur',
+            describe: 'Browser (default electron)',
             default: 'electron',
             choices: ['chrome', 'electron', 'firefox', 'edge']
         },
         spec: {
             alias: 's',
-            describe: 'Format des tests exécutés',
+            describe: 'JS or feature tests ? (default feature)',
             default: 'feature',
             choices: ['js', 'feature']
+        },
+        tags: {
+            alias: 't',
+            describe: 'Execute les tests selon les tags'
+        },
+        visual: {
+            alias: 'v',
+            describe: 'Visual regression (default actual) : base = take screenshots ; actual = comparaison',
+            default: 'none',
+            choices: ['none', 'base', 'actual']
         }
     })
     .help().argv
@@ -51,9 +61,14 @@ const argv = yargs
 initReports()
 
 var specs = argv._ != '' ? `cypress/e2e/${argv.app}/${argv.env}/${argv._}.${argv.spec}` : `cypress/e2e/${argv.app}/${argv.env}/**/*.${argv.spec}`
+var tags = argv['tags'] == undefined ? '' : `TAGS=${argv.tags}`
+var regression = argv['visual'] == 'none' ? '' : argv['visual'] == 'base' ? 'type=base' : 'type=actual'
+var cibuildid = argv['ci-build-id'] != null ? 'ci-build-id=' + argv['ci-build-id'] : ''
+var envConfig = [cibuildid, regression, tags]
 
 cypress
     .run({
+        env: envConfig.filter(val => val).join(','),
         browser: argv.browser,
         spec: specs
     })

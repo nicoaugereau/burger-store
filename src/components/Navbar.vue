@@ -5,6 +5,7 @@
         </router-link>
         <router-link data-testid="home-page" to="/">Home</router-link>
         <router-link data-testid="orders-page" to="/pedidos">Commandes</router-link>
+        <router-link data-testid="iframe" to="/iframe">iframe</router-link>
     </div>
 </template>
 

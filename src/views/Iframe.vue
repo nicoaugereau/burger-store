@@ -1,8 +1,7 @@
 <template>
     <Banner />
     <div class="main-container">
-        <h1 data-testid="page-title">Créez votre Burger</h1>
-        <BurgerForm />
+        <Iframe />
     </div>
 </template>
 
