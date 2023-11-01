@@ -6,7 +6,7 @@
 
 This project is an order system for a hamburger restaurant, with an order page and a page to check the orders placed.
 
-📣 This project has been updated to Cypress v12 (with cypress-cucumber-preprocessor v4.3.1).
+📣 This project has been updated to Cypress v13 (with cucumber).
 
 <br>
 
