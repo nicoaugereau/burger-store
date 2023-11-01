@@ -75,7 +75,7 @@ cypress
     .then(infos => {
         // Création du rapport de tests
         try {
-            reporter({ infos: infos, spec: argv.spec, app: argv.app })
+            reporter({ infos: infos, app: argv.app })
         } catch (error) {
             console.error(error)
         }

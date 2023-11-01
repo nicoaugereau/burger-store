@@ -5,7 +5,7 @@
  */
 const shell = require('shelljs')
 
-let { projects, docker } = require('./project-infos.json')
+let { projects } = require('./project-infos.json')
 
 /**
  * Format date
@@ -66,82 +66,49 @@ function initReports() {
  * @param {*} options : éléments de tests passés par cypress_runner
  */
 function reporter(options) {
-    if (options.spec == 'js') {
-        /**
-         * Rapport des tests js
-         */
-        // mocha-reporter
-        const { merge } = require('mocha-reporter')
-        const mochaReportDir = `reports/mochareports`
-        shell.mkdir('-p', mochaReportDir)
-        var reportOptions = {}
-        reportOptions = {
-            files: ['./reports/mocha/*.json'],
-            reportDir: mochaReportDir,
-            infos: 'failedOnly',
-            metadata: {
-                browser: {
-                    name: options.infos.browserName,
-                    version: options.infos.browserVersion
-                },
-                platform: {
-                    name: options.infos.osName,
-                    version: options.infos.osVersion
-                }
-            },
-            customData: {
-                data: [
-                    { label: 'Projet', value: projects[options.app].name },
-                    { label: 'Version', value: projects[options.app].version }
-                ]
-            }
-        }
-        merge(reportOptions)
-    } else {
-        /**
-         * Rapport des tests cucumber (feature)
-         */
-        const htmlReportDir = `reports/cucumberreports`
-        const report = require('cucumber-reporter')
-        // Ajout les captures écrans au rapport
-        const addScreenshots = require('./cucumber-report')
-        addScreenshots()
+    /**
+     * Rapport des tests cucumber (feature)
+     */
+    const htmlReportDir = `reports/cucumberreports`
+    const report = require('multiple-cucumber-html-reporter')
+    // Ajout les captures écrans au rapport
+    //const addScreenshots = require('./cucumber-report')
+    addScreenshots()
 
-        let deviceName = 'Desktop'
-        report.generate({
-            jsonDir: './reports/cucumber/',
-            saveRunInfos: true,
-            reportPath: htmlReportDir,
-            displayDuration: true,
-            totalTime: toTotalDuration(options.infos.totalDuration),
-            totalDuration: options.infos.totalDuration,
-            saveCollectedJSON: false,
-            useCDN: false,
-            pageTitle: 'Tests automatisés',
-            reportName: `Rapport des tests automatisés`,
-            metadata: {
-                browser: {
-                    name: options.infos.browserName,
-                    version: options.infos.browserVersion
-                },
-                device: deviceName,
-                platform: {
-                    name: options.infos.osName,
-                    version: options.infos.osVersion
-                }
+    let deviceName = 'Desktop'
+    report.generate({
+        jsonDir: './reports/cucumber/',
+        saveRunInfos: true,
+        reportPath: htmlReportDir,
+        displayDuration: true,
+        totalTime: toTotalDuration(options.infos.totalDuration),
+        totalDuration: options.infos.totalDuration,
+        saveCollectedJSON: false,
+        useCDN: false,
+        pageTitle: 'Tests automatisés',
+        reportName: `Rapport des tests automatisés`,
+        metadata: {
+            browser: {
+                name: options.infos.browserName,
+                version: options.infos.browserVersion
             },
-            customData: {
-                title: 'Run infos',
-                data: [
-                    { label: 'Début', value: toLocalDateTime(options.infos.startedTestsAt) },
-                    { label: 'Fin', value: toLocalDateTime(options.infos.endedTestsAt) },
-                    { label: "Temps d'exécution : ", value: toTotalDuration(options.infos.totalDuration) },
-                    { label: 'Projet', value: projects[options.app].name },
-                    { label: 'Version', value: projects[options.app].version }
-                ]
+            device: deviceName,
+            platform: {
+                name: options.infos.osName,
+                version: options.infos.osVersion
             }
-        })
-    }
+        },
+        customData: {
+            title: 'Run infos',
+            data: [
+                { label: 'Début', value: toLocalDateTime(options.infos.startedTestsAt) },
+                { label: 'Fin', value: toLocalDateTime(options.infos.endedTestsAt) },
+                { label: "Temps d'exécution : ", value: toTotalDuration(options.infos.totalDuration) },
+                { label: 'Projet', value: projects[options.app].name },
+                { label: 'Version', value: projects[options.app].version }
+            ]
+        }
+    })
 }
 
 module.exports = { initReports, reporter }
