@@ -1,6 +1,6 @@
 ![NodeJS version](https://img.shields.io/badge/node-16.x-green.svg)
 ![NodeJS version](https://img.shields.io/badge/node-18.x-green.svg)
-![NodeJS version](https://img.shields.io/badge/cypress-12.x-green.svg)
+![NodeJS version](https://img.shields.io/badge/cypress-13.x-green.svg)
 
 # Burger Store 🍔
 
@@ -23,7 +23,7 @@ git clone https://github.com/jovimoura/burger-store
 ### Go to the directory
 
 ```
-cd <nome-da-pasta>
+cd <burger-store folder>
 ```
 
 ### Install the dependencies
