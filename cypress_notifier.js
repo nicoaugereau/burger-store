@@ -43,6 +43,7 @@ function teams(datas) {
             }
         ]
     }
+    // Modify teams channel url
     var options = {
         url: 'https://...',
         body: datastring
@@ -58,31 +59,6 @@ function teams(datas) {
                 console.log(res.body)
             }
         })
-}
-
-function jsTests() {
-    // Fichier contenant le détail du résultat des tests
-    report = require('./reports/mochareports/report.json')
-    // Calcul du ratio
-    totalPercent = Number(report.stats.pendingPercent) + Number(report.stats.passPercent)
-    var statusVal = ratio(totalPercent)
-
-    infosTest = {
-        totalSuites: report.stats.suites,
-        totalTests: report.stats.tests,
-        totalPassed: report.stats.passes,
-        totalFailed: report.stats.failures,
-        totalSkipped: report.stats.skipped,
-        totalPending: report.stats.pending,
-        pendingPercent: Number(report.stats.pendingPercent),
-        passPercent: Number(report.stats.passPercent),
-        execTime: report.totalTime,
-        status: statusVal.status,
-        totalPercent: totalPercent,
-        color: statusVal.color
-    }
-
-    return infosTest
 }
 
 function gherkinTests() {
@@ -147,7 +123,7 @@ function ratio(total) {
 }
 
 function notifier(options) {
-    var reportingDatas = options.spec == 'js' ? jsTests() : gherkinTests()
+    var reportingDatas = gherkinTests()
 
     if (options.hasOwnProperty('ciBuildId')) {
         var datas = {
