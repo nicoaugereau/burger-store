@@ -15,7 +15,7 @@
         "cy2:run": "export CYPRESS_API_URL=http://localhost:1234 && npx cy2 run --record --key burger-store --parallel --ci-build `date +%s`"
     },
     "dependencies": {
-        "@badeball/cypress-cucumber-preprocessor": "^18.0.6",
+        "@badeball/cypress-cucumber-preprocessor": "^20.0.1",
         "@cypress/browserify-preprocessor": "^3.0.2",
         "core-js": "^3.6.5",
         "cypress": "^13.6.2",
